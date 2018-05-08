@@ -5,7 +5,7 @@ import voteSaga from './vote/saga';
 
 export default function* root() {
     yield all([
-        ...drizzleSagas.map(saga => fork(saga)),
+        drizzleSagas.map(saga => fork(saga)),
         ...voteSaga,
     ])
 }

@@ -1,5 +1,5 @@
 import Vote from './Vote'
-import { drizzleConnect } from 'drizzle-react';
+import { drizzleConnect } from 'drizzle-react'
 import { Actions } from '../../vote/action';
 
 const mapStateToProps = state => {

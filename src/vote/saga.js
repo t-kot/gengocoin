@@ -1,14 +1,10 @@
-import { takeLatest, select } from 'redux-saga/effects';
+import { takeLatest, select, call } from 'redux-saga/effects';
 import { ActionTypes } from './action';
-import { Drizzle, generateStore } from 'drizzle';
-import drizzleOptions from '../drizzleOptions';
 import { getContract } from './selector';
 
 function* addPlaceVotes(action) {
     const payload = action.payload;
-    const contract = yield select(getContract, 'Betting');
-    debugger;
-    if (!payload) return;
+    const result = drizzle.contracts.Betting.methods.addPlaceVotes.cacheSend(payload.volume, payload.value);
 }
 
 
